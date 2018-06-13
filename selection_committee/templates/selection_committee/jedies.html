@@ -1,0 +1,15 @@
+{% extends 'selection_committee/youngling.html' %}
+
+{% block content %}
+    <h1>Jedi Choosing</h1>
+    <form method="post">
+        {% csrf_token %}
+        <select name="jedi_selecter">
+            {% for jedi in all_jedies %}
+                <option value="{{ jedi.id }}">{{ jedi.name }}, {{ jedi.planet_stud }}, {{ jedi.order.name }}</option>
+            {% endfor %}
+
+        </select>
+        <button type="submit">Send</button>
+    </form>
+{% endblock %}

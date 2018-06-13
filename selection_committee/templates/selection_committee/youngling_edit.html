@@ -1,0 +1,10 @@
+{% extends 'selection_committee/youngling.html' %}
+
+{% block content %}
+    <h1>New Meat</h1>
+    <form method="post">
+        {% csrf_token %}
+        {{ younglingform.as_p }}
+        <button type="submit">Send</button>
+    </form>
+{% endblock %}

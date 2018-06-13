@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Title</title>
+
+        <style>
+            a.choice-button {
+            color: #fff;
+            user-select: none; /* Убираем текстовое выделение */
+            text-decoration: none;	/* Убираем подчеркивание */
+            outline: none; /* Убираем контур вокруг ссылки */
+            font-weight: bold;
+            background-color: #fa8e47; /* Цвет фона */
+            padding: 1em 2em; /* Отступ от текста до рамки */
+            }
+            a.choice-button:active {
+            background-color: #ee6206; /* Цвет кнопки при нажатии */
+            }
+            a.choice-button:hover {
+            background-color: #f97f2e; /* Цвет кнопки при наведении курсора */
+            }
+        </style>
+
+    </head>
+    <body>
+        <h1>
+            Here should been the choice buttons
+        </h1>
+
+        <a href="{% url 'selection_committee:youngling' %}" class="choice-button">Youngling</a>
+        <a href="{% url 'selection_committee:jedies' %}" class="choice-button">Jedi</a>
+    </body>
+</html>

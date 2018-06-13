@@ -1,0 +1,18 @@
+{% extends 'selection_committee/youngling.html' %}
+
+{% block content %}
+    <h1>You Will Fail, {{ personal_test.youngling.name }}</h1>
+    <h3>{{ personal_test.orders_code.name }}</h3>
+    <form method="post">
+        {% csrf_token %}
+        {% for que in qs %}
+            <label for="id_form-1-answer">{{ que.question.description }}</label>
+            <select name="{{ que.id }}" id="id_form-1-answer">
+                <option value="None" selected>Unknown</option>
+                <option value="True">Yes</option>
+                <option value="False">No</option>
+            </select>
+        {% endfor %}
+        <button type="submit">Send</button>
+    </form>
+{% endblock %}

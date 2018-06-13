@@ -1,0 +1,21 @@
+{% extends 'selection_committee/youngling.html' %}
+
+{% block content %}
+    <h1>Padawan Choosing</h1>
+    <form method="post" name="padawan_selected">
+        {% csrf_token %}
+        {% for padawan in younglings %}
+            <p>
+                <span style="font-weight: bold;"> {{ padawan.name }}, {{ padawan.planet_habitat.name }}</span><br>
+                {% for qwe in padawan.test.qans_set.all %}
+                    <span>{{ qwe.question.description }}:</span><span style="font-weight: bold; color: darkorchid"> {{ qwe.answer }}</span><br>
+                {% endfor %}
+
+                <label>
+                    <input type="radio" name="id_checked" value="{{ padawan.id }}"> {{ padawan.name }}
+                </label>
+            </p>
+        {% endfor %}
+        <button type="submit">Send</button>
+    </form>
+{% endblock %}
