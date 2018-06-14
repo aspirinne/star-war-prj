@@ -6,9 +6,9 @@ class YounglingForm(forms.ModelForm):
     class Meta:
         model = Youngling
         exclude = ['teacher']
-        widgets = {
-            'birthday': forms.DateInput(format('%Y/%m/%d'), attrs={'placeholder': 'Электронный адрес',}),
-        }
+        # widgets = {
+        #     'birthday': forms.DateInput(format('%Y/%m/%d'), attrs={'placeholder': 'Электронный адрес',}),
+        # }
 
 
 # class JediChooseForm(forms.Form)
