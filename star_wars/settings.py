@@ -28,19 +28,20 @@ SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', 'c_*bra7fy$p*)gu7e72fsruzrtojxv
 # DEBUG = True
 DEBUG = bool(os.environ.get('DJANGO_DEBUG', True))
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
 
 INSTALLED_APPS = [
-    'selection_committee.apps.SelectionCommitteeConfig',
+#    'selection_committee.apps.SelectionCommitteeConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'selection_committee',
 ]
 
 MIDDLEWARE = [
@@ -143,3 +144,4 @@ DEFAULT_TO_EMAIL = 'folko93@mail.ru'
 # import dj_database_url
 db_from_env = dj_database_url.config()
 DATABASES['default'].update(db_from_env)
+STATICFILES_STORAGE='whitenoise.django.GzipManifestStaticFilesStorage'
