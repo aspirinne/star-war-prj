@@ -2,9 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="03b596a6-b202-445c-ac39-ca00f0ca5719" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/selection_committee/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/selection_committee/forms.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/star_wars/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/star_wars/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/selection_committee/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/selection_committee/views.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -17,7 +16,7 @@
     <option name="myCustomStartScript" value="import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
+    <leaf />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -45,14 +44,14 @@
         <option value="$PROJECT_DIR$/selection_committee/templates/selection_committee/answering.html" />
         <option value="$PROJECT_DIR$/selection_committee/templates/selection_committee/jedies.html" />
         <option value="$PROJECT_DIR$/selection_committee/templates/selection_committee/padawan_select.html" />
-        <option value="$PROJECT_DIR$/selection_committee/views.py" />
         <option value="$PROJECT_DIR$/Procfile.py" />
         <option value="$PROJECT_DIR$/requirements.txt" />
         <option value="$PROJECT_DIR$/star_wars/requirements.txt" />
         <option value="$PROJECT_DIR$/Procfile" />
         <option value="$PROJECT_DIR$/star_wars/settings.py" />
-        <option value="$PROJECT_DIR$/selection_committee/forms.py" />
         <option value="$PROJECT_DIR$/star_wars/urls.py" />
+        <option value="$PROJECT_DIR$/selection_committee/forms.py" />
+        <option value="$PROJECT_DIR$/selection_committee/views.py" />
       </list>
     </option>
   </component>
@@ -83,7 +82,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -99,12 +97,19 @@
             <path>
               <item name="star-war-prj" type="b2602c69:ProjectViewProjectNode" />
               <item name="star-war-prj" type="462c0819:PsiDirectoryNode" />
+              <item name="selection_committee" type="462c0819:PsiDirectoryNode" />
+              <item name="templates" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="star-war-prj" type="b2602c69:ProjectViewProjectNode" />
+              <item name="star-war-prj" type="462c0819:PsiDirectoryNode" />
               <item name="star_wars" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -197,7 +202,7 @@
       <window_info anchor="bottom" id="Python Console" order="10" weight="0.3295082" />
       <window_info anchor="bottom" id="Run" order="2" />
       <window_info anchor="bottom" id="Terminal" order="12" weight="0.40327868" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2560606" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25984848" />
       <window_info anchor="bottom" id="Docker" order="11" show_stripe_button="false" />
       <window_info anchor="right" id="Database" order="3" />
       <window_info anchor="right" id="SciView" order="3" />
@@ -418,13 +423,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/selection_committee/templates/selection_committee/youngling_edit.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="126">
-          <caret line="7" column="8" selection-start-line="7" selection-start-column="8" selection-end-line="7" selection-end-column="43" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/selection_committee/templates/selection_committee/youngling.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="126">
@@ -535,19 +533,29 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/selection_committee/views.py">
+    <entry file="file://$PROJECT_DIR$/selection_committee/templates/selection_committee/youngling_edit.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="72">
-          <caret line="4" selection-start-line="4" selection-end-line="4" />
+        <state relative-caret-position="126">
+          <caret line="7" column="8" selection-start-line="7" selection-start-column="8" selection-end-line="7" selection-end-column="43" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/selection_committee/forms.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="144">
-          <caret line="8" column="8" selection-start-line="8" selection-start-column="10" selection-end-line="10" selection-end-column="11" />
+        <state relative-caret-position="216">
+          <caret line="12" column="77" selection-start-line="12" selection-start-column="77" selection-end-line="12" selection-end-column="77" />
           <folding>
             <element signature="e#0#24#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/selection_committee/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="382">
+          <caret line="99" column="74" lean-forward="true" selection-start-line="99" selection-start-column="74" selection-end-line="99" selection-end-column="74" />
+          <folding>
+            <element signature="e#0#37#0" expanded="true" />
           </folding>
         </state>
       </provider>

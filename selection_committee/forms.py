@@ -1,14 +1,17 @@
 from django import forms
 from .models import Youngling
+import datetime
 
+
+year = datetime.date.today().year
 
 class YounglingForm(forms.ModelForm):
     class Meta:
         model = Youngling
         exclude = ['teacher']
-        # widgets = {
-        #     'birthday': forms.DateInput(format('%Y/%m/%d'), attrs={'placeholder': 'Электронный адрес',}),
-        # }
+        widgets = {
+            'birthday': forms.SelectDateWidget(years=range(year, year-100, -1))
+        }
 
 
 # class JediChooseForm(forms.Form)
