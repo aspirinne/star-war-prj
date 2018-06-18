@@ -17,7 +17,7 @@ class Youngling(models.Model):
     name = models.CharField(max_length=200)
     planet_habitat = models.ForeignKey('Planet', on_delete=models.CASCADE)
     birthday = models.DateField(null=True, blank=True)
-    email = models.EmailField(default='folko93@mail.ru')
+    email = models.EmailField()
     teacher = models.ForeignKey('Jedi', on_delete=models.CASCADE, related_name='Younglings', null=True, blank=True)
 
 
