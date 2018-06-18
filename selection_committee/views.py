@@ -81,13 +81,6 @@ def j_y_choosing(request, selected_jedi_id):
     if request.method == 'POST':
         try:
             selected_padawan = request.POST['id_checked']
-            # padawan = Youngling.objects.get(id=selected_padawan)
-            # padawan.teacher_id = selected_jedi_id
-            # subject = padawan.name
-            # message = 'Congratulations! ' + padawan.teacher.name + ' will teach you!'
-            # adress = padawan.email
-            # padawan.save()
-            # send_mail(subject, message, settings.EMAIL_HOST_USER, [adress])
         except KeyError:
             selected_padawan = None
         if selected_padawan is not None:
