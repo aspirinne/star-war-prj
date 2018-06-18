@@ -26,7 +26,7 @@ urlpatterns = [
     # before answering
     url(r'^genering.html/(?P<young_id>[0-9]+)/$', views.before_testing, name='before'),
     # younglings answering
-    url(r'^answering.html/(?P<young_id>[0-9]+),(?P<personal_test_id>[0-9]+)/$', views.testing, name='testing'),
+    url(r'^answering.html/(?P<personal_test_id>[0-9]+)/$', views.testing, name='testing'),
     # jedies list
     url(r'^jedies.html/$', views.jedies, name='jedies'),
     # candidates list

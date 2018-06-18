@@ -11,7 +11,7 @@ from django.conf import settings
 
 # Start page with choice
 def selection_committee(request):
-    return render(request, 'selection_committee/index.html', locals())
+    return render(request, 'selection_committee/index.html')
 
 
 # registration form for youngling
@@ -42,19 +42,15 @@ def before_testing(request, young_id):
         answer.test_id = personal_test.id
         answer.question_id = quest.id
         answer.save()
-    return redirect('selection_committee:testing', young_id=young_id, personal_test_id=personal_test.id)
-    # return render(request, 'selection_committee/answering.html', {'personal_test': personal_test})
+    return redirect('selection_committee:testing', personal_test_id=personal_test.id)
 
 
 # Answering for test
-def testing(request, young_id, personal_test_id):
-    # personal_test = before_testing(request, young_id)
-    # qs = QAns.objects.filter(test_id=personal_test.id).prefetch_related('question')
+def testing(request, personal_test_id):
     try:
         qs = QAns.objects.filter(test_id=personal_test_id).prefetch_related('question')
         if request.method == 'POST':
             for quest in qs:
-                # quest.answer = request.POST[str(quest.id)]
                 ans = request.POST[str(quest.id)]
                 if ans == 'None':
                     quest.answer = None
@@ -63,8 +59,7 @@ def testing(request, young_id, personal_test_id):
                 else:
                     quest.answer = False
                 quest.save()
-            return render(request, 'selection_committee/index.html', locals())
-            # a = request.POST['qwe']
+            return render(request, 'selection_committee/index.html')
         else:
             personal_test = Test.objects.get(id=personal_test_id)
             return render(request, 'selection_committee/answering.html', {'qs': qs, 'personal_test': personal_test})
