@@ -90,6 +90,6 @@ def j_y_choosing(request, selected_jedi_id):
             send_mail(subject, message, settings.EMAIL_HOST_USER, [adress])
         except KeyError:
             selected_padawan = None
-        return render(request, 'selection_committee/index.html', locals())
+        return render(request, 'selection_committee/index.html', {'selected_padawan': selected_padawan})
     else:
         return render(request, 'selection_committee/padawan_select.html', {'younglings': younglings})
