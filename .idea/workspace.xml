@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="03b596a6-b202-445c-ac39-ca00f0ca5719" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/selection_committee/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/selection_committee/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/selection_committee/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/selection_committee/views.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -41,8 +40,11 @@
       <file leaf-file-name="views.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/selection_committee/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="396">
-              <caret line="94" column="74" lean-forward="true" selection-start-line="94" selection-start-column="74" selection-end-line="94" selection-end-column="74" />
+            <state relative-caret-position="216">
+              <caret line="21" column="40" lean-forward="true" selection-start-line="21" selection-start-column="40" selection-end-line="21" selection-end-column="40" />
+              <folding>
+                <element signature="e#0#37#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -93,8 +95,8 @@
         <option value="$PROJECT_DIR$/star_wars/urls.py" />
         <option value="$PROJECT_DIR$/selection_committee/forms.py" />
         <option value="$PROJECT_DIR$/selection_committee/models.py" />
-        <option value="$PROJECT_DIR$/selection_committee/views.py" />
         <option value="$PROJECT_DIR$/selection_committee/urls.py" />
+        <option value="$PROJECT_DIR$/selection_committee/views.py" />
       </list>
     </option>
   </component>
@@ -609,8 +611,11 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/selection_committee/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="396">
-          <caret line="94" column="74" lean-forward="true" selection-start-line="94" selection-start-column="74" selection-end-line="94" selection-end-column="74" />
+        <state relative-caret-position="216">
+          <caret line="21" column="40" lean-forward="true" selection-start-line="21" selection-start-column="40" selection-end-line="21" selection-end-column="40" />
+          <folding>
+            <element signature="e#0#37#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

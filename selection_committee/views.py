@@ -19,8 +19,7 @@ def youngling(request):
     if request.method == 'POST':
         younglingform = YounglingForm(request.POST)
         if younglingform.is_valid():
-            young = younglingform.save(commit=False)
-            younglingform.save()
+            young = younglingform.save()
             return redirect('selection_committee:before', young_id=young.id)
     else:
         younglingform = YounglingForm()
@@ -30,7 +29,7 @@ def youngling(request):
 # Creating of thr Personal Test for Youngling
 def before_testing(request, young_id):
     # get the random order from model.Order
-    order = Order.objects.all().order_by('?')[:1].first()
+    order = Order.objects.all().order_by('?').first()
     personal_test = Test()
     personal_test.orders_code_id = order.id
     personal_test.youngling_id = young_id
@@ -74,7 +73,6 @@ def jedies(request):
         return redirect('selection_committee:j_y_choosing', selected_jedi_id=selected_jedi_id)
     else:
         return render(request, 'selection_committee/jedies.html', {'all_jedies': all_jedies})
-    # return render(request, 'selection_committee/jedies.html', locals())
 
 
 def j_y_choosing(request, selected_jedi_id):
