@@ -50,7 +50,8 @@ def testing(request, personal_test_id):
         qs = QAns.objects.filter(test_id=personal_test_id).prefetch_related('question')
         if request.method == 'POST':
             for quest in qs:
-                quest.answer = request.POST[str(quest.id)]
+                answers_selecter_name = str(quest.id)
+                quest.answer = request.POST[answers_selecter_name]
                 quest.save()
             return render(request, 'selection_committee/index.html')
         else:
