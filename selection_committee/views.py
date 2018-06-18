@@ -51,13 +51,6 @@ def testing(request, personal_test_id):
         if request.method == 'POST':
             for quest in qs:
                 quest.answer = request.POST[str(quest.id)]
-                # ans = request.POST[str(quest.id)]
-                # if ans == 'None':
-                #     quest.answer = None
-                # elif ans == 'True':
-                #     quest.answer = True
-                # else:
-                #     quest.answer = False
                 quest.save()
             return render(request, 'selection_committee/index.html')
         else:
