@@ -48,6 +48,9 @@ def before_testing(request, young_id):
 def testing(request, personal_test_id):
     try:
         qs = QAns.objects.filter(test_id=personal_test_id).prefetch_related('question')
+    except QAns.DoesNotExist:
+        return HttpResponseNotFound('<h2>Question not found</h2>')
+    else:
         if request.method == 'POST':
             for quest in qs:
                 answers_selecter_name = str(quest.id)
@@ -57,8 +60,6 @@ def testing(request, personal_test_id):
         else:
             personal_test = Test.objects.get(id=personal_test_id)
             return render(request, 'selection_committee/answering.html', {'qs': qs, 'personal_test': personal_test})
-    except QAns.DoesNotExist:
-        return HttpResponseNotFound('<h2>Question not found</h2>')
 
 
 def jedies(request):
@@ -77,8 +78,8 @@ def j_y_choosing(request, selected_jedi_id):
         try:
             selected_padawan = request.POST['id_checked']
         except KeyError:
-            selected_padawan = None
-        if selected_padawan is not None:
+            print('He does not want to get new student')
+        else:
             padawan = Youngling.objects.get(id=selected_padawan)
             padawan.teacher_id = selected_jedi_id
             subject = padawan.name
@@ -86,6 +87,7 @@ def j_y_choosing(request, selected_jedi_id):
             adress = padawan.email
             padawan.save()
             send_mail(subject, message, settings.EMAIL_HOST_USER, [adress])
-        return render(request, 'selection_committee/index.html')
+        finally:
+            return render(request, 'selection_committee/index.html')
     else:
         return render(request, 'selection_committee/padawan_select.html', {'younglings': younglings})
