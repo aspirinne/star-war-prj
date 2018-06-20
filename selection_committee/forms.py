@@ -5,7 +5,12 @@ import datetime
 
 year = datetime.date.today().year
 
+
 class YounglingForm(forms.ModelForm):
+    """
+    Form for new youngling.
+    Was made by the Youngling model (know more .models.Youngling).
+    """
     class Meta:
         model = Youngling
         exclude = ['teacher']

@@ -11,11 +11,21 @@ from django.conf import settings
 
 # Start page with choice
 def selection_committee(request):
+    """
+    View function for Start Page.
+    :param request:
+    :return: start page (selection_committee/index.html)
+    """
     return render(request, 'selection_committee/index.html')
 
 
 # registration form for youngling
 def youngling(request):
+    """
+    View function for Youngling's registration page with form.
+    :param request:
+    :return: GET: registration page; POST: redirect to selection_committee:before with this registered youngling's ID.
+    """
     if request.method == 'POST':
         younglingform = YounglingForm(request.POST)
         if younglingform.is_valid():
@@ -28,6 +38,12 @@ def youngling(request):
 
 # Creating of thr Personal Test for Youngling
 def before_testing(request, young_id):
+    """
+    Function what make and save personal test by the random questions and random order for registered youngling.
+    :param request:
+    :param young_id: ID of registered youngling, who will answer this test.
+    :return: redirect to selection_committee:testing and generated Test's ID.
+    """
     # get the random order from model.Order
     order = Order.objects.all().order_by('?').first()
     personal_test = Test()
@@ -46,6 +62,12 @@ def before_testing(request, young_id):
 
 # Answering for test
 def testing(request, personal_test_id):
+    """
+    View function for answering page, where youngling answer the questions from his personal test.
+    :param request:
+    :param personal_test_id: ID of test, what was generated for this youngling.
+    :return: GET: youngling's answering page; POST: start page.
+    """
     try:
         qs = QAns.objects.filter(test_id=personal_test_id).prefetch_related('question')
     except QAns.DoesNotExist:
@@ -63,6 +85,11 @@ def testing(request, personal_test_id):
 
 
 def jedies(request):
+    """
+    View function for page where jedi chose himself from the list.
+    :param request:
+    :return: GET: page with all jedies list; POST: redirect to selection_committee:j_y_choosing with selected jedi's ID.
+    """
     all_jedies = Jedi.objects.all()
     if request.method == 'POST':
         selected_jedi_id = request.POST['jedi_selecter']
@@ -72,6 +99,13 @@ def jedies(request):
 
 
 def j_y_choosing(request, selected_jedi_id):
+    """
+    View function for page, where jedi can see younglings without teacher from his planet and their answers for personal test.
+    Based on answers he can choose youngling, who become his apprentice. And message will be sent for this youngling.
+    :param request:
+    :param selected_jedi_id: ID of jedi, who watch this page.
+    :return: GET: page with younglings; POST: start page
+    """
     jedi = Jedi.objects.get(id=selected_jedi_id)
     younglings = Youngling.objects.filter(planet_habitat=jedi.planet_stud, teacher__isnull=True)
     if request.method == 'POST':
